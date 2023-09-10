@@ -70,27 +70,26 @@
 
         <!-- Block-quoted Stack Overflow Question -->
         <blockquote>
-            <p>"Media Queries: How to target desktop, tablet, and mobile?"</p>
-            <footer>
-                <a href="https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile">https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile</a>
-            </footer>
+            <p>"How to wait for the 'end' of 'resize' event and only then perform an action?"</p>
+            
+                <a href="https://stackoverflow.com/questions/5489946/how-to-wait-for-the-end-of-resize-event-and-only-then-perform-an-action">https://stackoverflow.com/questions/5489946/how-to-wait-for-the-end-of-resize-event-and-only-then-perform-an-action</a>
+            
         </blockquote>
 
         <!-- Displayed Snippet Using <pre> -->
         <pre>
-        @media screen 
-        and (min-device-width: 1200px) 
-        and (max-device-width: 1600px) 
-        and (-webkit-min-device-pixel-ratio: 1) { 
-        }
+            var resizeTimer;
 
-        /* ----------- Retina Screens ----------- */
-        @media screen 
-        and (min-device-width: 1200px) 
-        and (max-device-width: 1600px) 
-        and (-webkit-min-device-pixel-ratio: 2)
-        and (min-resolution: 192dpi) { 
-        }
+            $(window).on('resize', function(e) {
+            
+              clearTimeout(resizeTimer);
+              resizeTimer = setTimeout(function() {
+            
+                // Run code here, resizing has "stopped"
+                        
+              }, 250);
+            
+            });
         </pre>
     
 
